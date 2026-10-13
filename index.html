@@ -1,1 +1,119 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0c1120"><meta name="description" content="A thoughtful home for the tools, reads, and ideas you want to come back to. Explore a sample shelf, add your own gems, and build a collection that feels like you."><title>GemHub — your discovery shelf</title><link rel="stylesheet" href="./style.css"></head><body><header><div class="brand">◇ gemhub</div><span class="tag">LOCAL WORKSPACE · NO ACCOUNT</span></header><main><div class="eyebrow">COLLECT WHAT MOVES YOU</div><h1>Your next great find.<br>All in one place.</h1><p class="intro">A thoughtful home for the tools, reads, and ideas you want to come back to. Explore a sample shelf, add your own gems, and build a collection that feels like you.</p><div class="stats"><div class="card"><p>IN YOUR LIBRARY</p><div id="count" class="metric">0</div></div><div class="card"><p>SAVED GEMS</p><div id="savedCount" class="metric">0</div></div><div class="card"><p>COLLECTIONS</p><div id="collectionCount" class="metric">0</div></div></div><div class="workspace"><aside class="panel"><h2>Add a gem</h2><form id="add"><label>Title<input name="title" required maxlength="80" placeholder="Something worth keeping"></label><label>Link<input name="url" type="url" required placeholder="https://example.com"></label><label>Category<select name="category"><option>Design</option><option>Engineering</option><option>Reading</option><option>Inspiration</option></select></label><label>Collection<input name="collection" maxlength="40" placeholder="Weekend discoveries" value="My discoveries" required></label><label>Why it matters<textarea name="notes" maxlength="400" placeholder="A note for your future self"></textarea></label><button>Add to library</button></form><div class="toolbar"><button id="export" class="secondary">Export backup</button><label class="small">Import backup<input id="import" type="file" accept="application/json"></label></div><button id="reset" class="secondary">Restore sample library</button></aside><section><div class="toolbar"><label>Search<input id="search" type="search" placeholder="Find a gem…"></label><label>Collection<select id="collection"><option value="">All collections</option></select></label><label>View<select id="view"><option value="all">All gems</option><option value="saved">Saved only</option></select></label></div><div id="gems" class="grid"></div></section></div><p id="status" class="status" role="status" aria-live="polite"></p></main><footer>Your collection stays in this browser. Export a backup to keep it portable. Sample links point to public resources.</footer><script type="module" src="./app.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#0c1120" />
+    <meta
+      name="description"
+      content="A thoughtful home for the tools, reads, and ideas you want to come back to. Explore a sample shelf, add your own gems, and build a collection that feels like you."
+    />
+    <title>GemHub — your discovery shelf</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="brand">◇ gemhub</div>
+      <span class="tag">LOCAL WORKSPACE · NO ACCOUNT</span>
+    </header>
+    <main>
+      <div class="eyebrow">COLLECT WHAT MOVES YOU</div>
+      <h1>Your next great find.<br />All in one place.</h1>
+      <p class="intro">
+        A thoughtful home for the tools, reads, and ideas you want to come back
+        to. Explore a sample shelf, add your own gems, and build a collection
+        that feels like you.
+      </p>
+      <div class="stats">
+        <div class="card">
+          <p>IN YOUR LIBRARY</p>
+          <div id="count" class="metric">0</div>
+        </div>
+        <div class="card">
+          <p>SAVED GEMS</p>
+          <div id="savedCount" class="metric">0</div>
+        </div>
+        <div class="card">
+          <p>COLLECTIONS</p>
+          <div id="collectionCount" class="metric">0</div>
+        </div>
+      </div>
+      <div class="workspace">
+        <aside class="panel">
+          <h2>Add a gem</h2>
+          <form id="add">
+            <label
+              >Title<input
+                name="title"
+                required
+                maxlength="80"
+                placeholder="Something worth keeping" /></label
+            ><label
+              >Link<input
+                name="url"
+                type="url"
+                required
+                placeholder="https://example.com" /></label
+            ><label
+              >Category<select name="category">
+                <option>Design</option>
+                <option>Engineering</option>
+                <option>Reading</option>
+                <option>Inspiration</option>
+              </select></label
+            ><label
+              >Collection<input
+                name="collection"
+                maxlength="40"
+                placeholder="Weekend discoveries"
+                value="My discoveries"
+                required /></label
+            ><label
+              >Why it matters<textarea
+                name="notes"
+                maxlength="400"
+                placeholder="A note for your future self"
+              ></textarea></label
+            ><button>Add to library</button>
+          </form>
+          <div class="toolbar">
+            <button id="export" class="secondary">Export backup</button
+            ><label class="small"
+              >Import backup<input
+                id="import"
+                type="file"
+                accept="application/json"
+            /></label>
+          </div>
+          <button id="reset" class="secondary">Restore sample library</button>
+        </aside>
+        <section>
+          <div class="toolbar">
+            <label
+              >Search<input
+                id="search"
+                type="search"
+                placeholder="Find a gem…" /></label
+            ><label
+              >Collection<select id="collection">
+                <option value="">All collections</option>
+              </select></label
+            ><label
+              >View<select id="view">
+                <option value="all">All gems</option>
+                <option value="saved">Saved only</option>
+              </select></label
+            >
+          </div>
+          <div id="gems" class="grid"></div>
+        </section>
+      </div>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+    </main>
+    <footer>
+      Your collection stays in this browser. Export a backup to keep it
+      portable. Sample links point to public resources.
+    </footer>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
