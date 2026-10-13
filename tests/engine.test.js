@@ -1,0 +1,19 @@
+import { test } from "node:test";
+import assert from "node:assert/strict";
+import { samples, validateGem, importGems, filterGems } from "../engine.js";
+test("search, saved and collection filters compose", () => {
+  assert.equal(
+    filterGems(samples, { query: "accessible", saved: true }).length,
+    1,
+  );
+  assert.equal(filterGems(samples, { collection: "Craft" }).length, 2);
+});
+test("reject executable links and malformed imports", () => {
+  assert.throws(() =>
+    validateGem({ ...samples[0], url: "javascript:alert(1)" }),
+  );
+  assert.throws(() => importGems([samples[0], samples[0]]));
+  assert.throws(() => importGems({}));
+});
+test("backup roundtrip preserves data", () =>
+  assert.deepEqual(importGems(JSON.parse(JSON.stringify(samples))), samples));
